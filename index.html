@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>LLM Talks</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="heading-h1">In Conversation with Claude</h1>
+      <img
+        class="claude-img"
+        src="gifs/claud.webp"
+        alt="claude-logo"
+        width="500"
+      />
+      <p class="below-claude-img">
+        Bringing AI closer to you, under your terms
+      </p>
+    </header>
+    <section>
+      <form action="">
+        <ul class="list">
+          <li>
+            <label for="role"> System Prompt </label>
+            <input class="input" type="text" id="role" name="system-role" />
+          </li>
+          <li>
+            <label for="user-query"> Ask Claude </label>
+            <textarea name="user-query" id="user-query"></textarea>
+          </li>
+          <li class="button">
+            <button id="submit-btn">
+              <img
+                src="gifs/reply-reply-me.gif"
+                alt="generate-answer"
+                width="300"
+              />
+              <p class="generate-answer">Send your message</p>
+            </button>
+          </li>
+        </ul>
+      </form>
+    </section>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
