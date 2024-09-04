@@ -19,7 +19,7 @@
 }
 
 form {
-  margin-top: 120px;
+  /* margin-top: 120px; */
 }
 
 label {
@@ -40,7 +40,7 @@ label {
 }
 
 #user-query {
-  margin-top: 20px;
+  margin-top: 60px;
   margin-left: 44px;
   width: 400px;
   height: 100px;
@@ -48,9 +48,32 @@ label {
   color: rgb(244, 159, 31);
 }
 
-.button {
+/* .button {
   margin-left: 196px;
   margin-top: 40px;
+} */
+
+.main-container {
+  margin-top: 100px;
+  display: flex;
+  /* justify-content: space-around; */
+  /* flex-wrap: wrap; */
+}
+
+.form {
+  /* flex:; */
+  /* flex: content; */
+  /* flex-direction: row; */
+  flex-direction: row;
+}
+
+.btn {
+  margin-left: 90px;
+  flex-direction: row;
+}
+
+#submit-btn {
+  cursor: pointer;
 }
 
 .generate-answer {
