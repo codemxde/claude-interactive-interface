@@ -4,9 +4,16 @@ from fastapi.responses import JSONResponse
 from Schema import ClaudeResponse
 
 def redirect_question_to_claude_llm(form_fields: ClaudeResponse):
+
+    if not form_fields.userQuery:
+        return JSONResponse(
+            status_code=status.HTTP_406_NOT_ACCEPTABLE,
+            content="You think you're funny huh, asking a question without any input? I ain't wasting precious tokens for this!"
+        )
+
     claude_llm = ClaudeLLM(
-        system_role=form_fields.systemRole,
-        user_query=form_fields.userQuery
+        user_query=form_fields.userQuery,
+        system_role=form_fields.systemRole
     )
     response = claude_llm.generate_answer()
 
