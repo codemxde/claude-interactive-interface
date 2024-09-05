@@ -9,12 +9,13 @@ class ClaudeLLM:
         self.client = anthropic.Anthropic(
             api_key=os.getenv("api_key")
         )
-        self.system_role = system_role
+        self.user_query = user_query
 
-        if user_query is not None:
-            self.user_query = user_query
+        if system_role != "":
+            self.system_role = system_role
         else:
-            self.user_query = os.getenv("default_prompt")
+            self.system_role = os.getenv("default_prompt")
+        
 
     def generate_answer(self):
         message = self.client.messages.create(

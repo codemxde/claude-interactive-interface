@@ -84,6 +84,14 @@ label {
   border-radius: 5px;
   padding: 15px;
   font-family: Arial, sans-serif;
+  overflow: auto;
+}
+
+.response-container p {
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Ensure long words don't overflow */
+  margin: 0; /* Remove default margins */
 }
 
 .response-text {

@@ -44,6 +44,8 @@ answerMiniContainer.addEventListener("click", async function (event) {
     .then((data) => {
       console.log("Server:", data);
 
+      // Process the Data
+
       // Creating an ask again button
       const askAgain = createAskAgain();
 
@@ -65,6 +67,7 @@ answerMiniContainer.addEventListener("click", async function (event) {
 
       // Assigning text from server to the paragraph element
       textElement.textContent = data;
+      // textElement.style.whiteSpace = "pre";
 
       // Apending Paragraph element into the Section Element
       responseElement.appendChild(textElement);
@@ -118,3 +121,5 @@ const createAskAgain = function () {
 
   return askAgain;
 };
+
+const processData = function (data) {};
