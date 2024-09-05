@@ -1,5 +1,6 @@
 const submitBtn = document.getElementById("submit-btn");
 const answerMiniContainer = document.querySelector(".btn");
+const answerAudio = new Audio("gifs/notification.wav");
 
 answerMiniContainer.addEventListener("click", async function (event) {
   event.preventDefault();
@@ -43,6 +44,8 @@ answerMiniContainer.addEventListener("click", async function (event) {
     })
     .then((data) => {
       console.log("Server:", data);
+
+      answerAudio.play();
 
       // Process the Data
 
@@ -121,5 +124,3 @@ const createAskAgain = function () {
 
   return askAgain;
 };
-
-const processData = function (data) {};
