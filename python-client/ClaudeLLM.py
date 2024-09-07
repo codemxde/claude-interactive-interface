@@ -1,15 +1,21 @@
 import anthropic
 import os
 from dotenv import load_dotenv
+from typing import Optional
 
 class ClaudeLLM:
-    def __init__(self, system_role: str, user_query: str) -> None:
+    def __init__(self, user_query: str, system_role: Optional[str] = None) -> None:
         load_dotenv()
         self.client = anthropic.Anthropic(
             api_key=os.getenv("api_key")
         )
-        self.system_role = system_role
         self.user_query = user_query
+
+        if system_role != "":
+            self.system_role = system_role
+        else:
+            self.system_role = os.getenv("default_prompt")
+        
 
     def generate_answer(self):
         message = self.client.messages.create(
